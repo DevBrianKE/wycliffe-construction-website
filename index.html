@@ -420,56 +420,100 @@
     <!-- CONTACT -->
     <!-- ========================= -->
 
-    <section class="contact" id="contact">
+<section class="contact" id="contact">
 
-        <div class="container contact-container">
+    <div class="container contact-container">
 
-            <!-- INFO -->
+        <!-- INFO -->
 
-            <div class="contact-info">
+        <div class="contact-info">
 
-                <h2>Contact Us</h2>
+            <h2>Contact Us</h2>
 
-                <p>
-                    We are ready to work with you on your next project.
-                </p>
+            <p>
+                We are ready to work with you on your next project.
+            </p>
 
-                <p>
-                    <i class="fa-solid fa-phone"></i>
+            <!-- PHONE -->
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+
+                <a href="tel:+254708175205">
                     +254 708 175 205
-                </p>
+                </a>
+            </p>
 
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
+            <!-- EMAIL -->
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+
+                <a href="mailto:wycliffelangat23@gmail.com">
                     wycliffelangat23@gmail.com
-                </p>
+                </a>
+            </p>
 
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Kericho, Kenya
-                </p>
+            <!-- WHATSAPP -->
 
-            </div>
+            <p>
+                <i class="fa-brands fa-whatsapp"></i>
 
-            <!-- FORM -->
+                <a 
+                    href="https://wa.me/254708175205"
+                    target="_blank"
+                >
+                    Chat on WhatsApp
+                </a>
+            </p>
 
-            <form class="contact-form">
+            <!-- LOCATION -->
 
-                <input type="text" placeholder="Your Name">
-
-                <input type="email" placeholder="Your Email">
-
-                <textarea rows="6" placeholder="Your Message"></textarea>
-
-                <button type="submit">
-                    Send Message
-                </button>
-
-            </form>
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Kericho, Kenya
+            </p>
 
         </div>
 
-    </section>
+        <!-- FORM -->
+
+        <form 
+            class="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+        >
+
+            <input 
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input 
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea 
+                name="message"
+                rows="6"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 
     <!-- ========================= -->
     <!-- FOOTER -->
