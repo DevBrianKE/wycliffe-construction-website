@@ -811,3 +811,48 @@ section{
     line-height: 1.6;
     font-size: 0.95rem;
 }
+
+.navs li{
+    list-style: none;
+}
+.navs li a{
+    text-decoration: none;
+    color:white;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.15);
+}
