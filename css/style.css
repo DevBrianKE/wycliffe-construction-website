@@ -4,6 +4,7 @@
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 *{
@@ -659,15 +660,14 @@ section{
 @media(max-width: 768px){
 
     .hero-content h1{
-
         font-size: 2.8rem;
-
     }
 
     .nav-links{
-
-        display: none;
-
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
     .services-grid,
@@ -678,6 +678,7 @@ section{
         grid-template-columns: 1fr;
 
     }
+
 
     .hero-buttons{
 
@@ -855,4 +856,86 @@ section{
 
 .whatsapp-float:hover {
   transform: scale(1.15);
+}
+/* MOBILE NAVIGATION */
+
+
+/* ================================= */
+/* RESPONSIVE NAVBAR */
+/* ================================= */
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.nav-links a.active{
+    color:#f4b400;
+    font-weight:600;
+}
+
+@media (max-width:768px){
+
+    .header{
+        background:#111;
+    }
+
+    .nav-container{
+        position:relative;
+        padding:15px 0;
+    }
+
+    .logo h2{
+        font-size:1.2rem;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .navbar{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#111;
+
+        max-height:0;
+        overflow:hidden;
+
+        transition:0.4s ease;
+        z-index:999;
+    }
+
+    .navbar.active{
+        max-height:500px;
+        padding:20px 0;
+    }
+
+    .nav-links{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+        padding:0;
+        margin:0;
+    }
+
+    .nav-links li{
+        list-style:none;
+    }
+
+    .nav-links a{
+        color:#fff;
+        font-size:1.1rem;
+        text-decoration:none;
+        transition:0.3s;
+    }
+
+    .nav-links a:hover{
+        color:#f4b400;
+    }
+
 }

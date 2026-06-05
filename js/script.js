@@ -1,3 +1,7 @@
+// =========================
+// GALLERY SLIDER
+// =========================
+
 const slides = document.querySelectorAll(".gallery-slide");
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
@@ -5,55 +9,81 @@ const prevBtn = document.querySelector(".prev");
 let currentSlide = 0;
 let autoSlide;
 
-function showSlide(index) {
+if (slides.length > 0 && nextBtn && prevBtn) {
 
-    slides.forEach(slide => {
-        slide.classList.remove("active");
+    function showSlide(index) {
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+        });
+
+        slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        showSlide(currentSlide);
+    }
+
+    nextBtn.addEventListener("click", () => {
+        nextSlide();
+        restartAutoSlide();
     });
 
-    slides[index].classList.add("active");
-}
+    prevBtn.addEventListener("click", () => {
+        prevSlide();
+        restartAutoSlide();
+    });
 
-function nextSlide() {
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 3000);
+    }
 
-    currentSlide++;
-
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
+    function restartAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
     }
 
     showSlide(currentSlide);
-}
-
-function prevSlide() {
-
-    currentSlide--;
-
-    if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-
-    showSlide(currentSlide);
-}
-
-nextBtn.addEventListener("click", () => {
-    nextSlide();
-    restartAutoSlide();
-});
-
-prevBtn.addEventListener("click", () => {
-    prevSlide();
-    restartAutoSlide();
-});
-
-function startAutoSlide() {
-    autoSlide = setInterval(nextSlide, 3000);
-}
-
-function restartAutoSlide() {
-    clearInterval(autoSlide);
     startAutoSlide();
 }
 
-showSlide(currentSlide);
-startAutoSlide();
+
+// =========================
+// MOBILE MENU
+// =========================
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navbar = document.querySelector(".navbar");
+
+if (menuToggle && navbar) {
+
+    menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+    });
+
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    navLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+            navbar.classList.remove("active");
+        });
+
+    });
+
+}
